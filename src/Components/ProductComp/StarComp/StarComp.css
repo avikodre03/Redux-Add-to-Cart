@@ -1,0 +1,12 @@
+.StarComp{
+  margin-top: 10px;
+   
+}
+.StarComp span{
+    color: orange;
+    font-size: 1.1rem;
+}
+
+.StarComp p{
+    font-size: 1rem;
+}

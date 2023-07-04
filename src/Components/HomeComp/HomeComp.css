@@ -1,0 +1,63 @@
+.homeComp {
+    height: 90%;
+    width: 100%;
+    position: relative;
+    overflow-y: hidden;
+}
+
+.homeComp video {
+    position: absolute;
+    top: 0;
+    /* left: 0;
+   bottom: 0; */
+    /* height: 100%; */
+    width: 100%;
+
+}
+
+.homeCompOverlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.756);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 4rem;
+}
+
+.homeCompOverlay h1 {
+    text-shadow: 1px 1px 12px rgba(48, 167, 0, 0.886);
+    margin: 2rem 0;
+    font-size: 2.5rem;
+}
+
+.homeCompOverlay button {
+    margin: 2rem 0;
+    height: 50px;
+    width: 160px;
+    border-radius: 10px;
+    cursor: pointer;
+    outline: none;
+    font-weight: bold;
+    background-color: #0ccaff;
+    text-decoration: none;
+    text-transform: uppercase;
+    border: none;
+    box-shadow: 0 0 10px rgba(123, 123, 123, 0.281);
+    transition-duration: .3s;
+    transition-property: box-shadow, transform;
+}
+
+.homeCompOverlay button:hover,
+.homeCompOverlay button:focus,
+.homeCompOverlay button:active {
+    box-shadow: 0 0 15px rgba(135, 134, 134, 0.963);
+
+    transform: scale(1.05);
+}

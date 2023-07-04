@@ -1,0 +1,114 @@
+.productComp {
+    height: 90%;
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+}
+
+.productComp h1,
+.productComp p {
+    margin-bottom: 1rem;
+}
+
+.productCardContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.productCard {
+    width: 40%;
+    height: 260px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.571);
+    display: flex;
+    margin: 1rem;
+    transition-duration: .5s;
+}
+
+.productCard:hover {
+    box-shadow: 0 0 10px black;
+    transform: scale(1.01);
+
+}
+
+.imgContainer {
+    width: 40%;
+    height: 100%;
+    /* border: 2px solid red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imgContainer img {
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.564);
+    border-radius: 5px;
+    padding: 15px;
+    height: 80%;
+    width: 80%;
+}
+
+.detailsContainer {
+    width: 60%;
+    height: 100%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.detailsContainer p {
+    margin-bottom: 8px;
+    font-size: 1.3rem;
+}
+
+.detailsContainer h3 {
+
+    font-weight: 600;
+}
+
+.detailsContainer h4 {
+    /* margin: .5rem 0; */
+    margin-bottom: 1rem;
+    color: red;
+}
+
+.CardButtons {
+    display: flex;
+
+    /* border: 2px solid red; */
+    /* justify-content: space-evenly; */
+}
+
+.CardButtons button {
+    height: 35px;
+    width: 100px;
+    margin-right: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+    background-color: #0ca2ff;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border: 1px solid rgba(0, 0, 0, 0.893);
+    box-shadow: 0 0 7px rgba(0, 0, 0, 0.281);
+    transition-duration: .3s;
+    transition-property: box-shadow, transform;
+}
+
+.CardButtons #cart {
+    background-color: rgb(49, 17, 17);
+}
+
+.CardButtons button:hover,
+.CardButtons button:focus,
+.CardButtons button:active {
+    box-shadow: 0 0 10px rgba(24, 24, 24, 0.384);
+
+    transform: scale(1.04);
+}
