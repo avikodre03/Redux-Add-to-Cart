@@ -28,7 +28,7 @@ const CartComp = () => {
   return (
     <>
 
-      <h1 style={{ margin: "10px" }}>Cart Component</h1>
+      <h1 style={{ margin: "10px" }}>Shopping Cart</h1>
       <div className='CartComp'>
         {cartData.length == 0 ? (
           <div className="emptyCart">

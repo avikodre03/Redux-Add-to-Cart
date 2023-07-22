@@ -21,8 +21,8 @@ const StarComp = (props) => {
 
 
             <p>{ratingStar} ( {props.stars.count} customer reviews )</p>
-            {console.log(props.stars.rate)}
-            {console.log(props.stars.count)}
+            {/* {console.log(props.stars.rate)}
+            {console.log(props.stars.count)} */}
         </div>
     )
 }

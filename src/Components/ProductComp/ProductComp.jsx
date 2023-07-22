@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import "./ProductComp.css"
 import axios from "axios"
 import productActionCreater from '../Redux/ActionCreater/productActionCreater'
@@ -7,16 +7,22 @@ import productStore from '../Redux/Store'
 import cartActionCreater from '../Redux/ActionCreater/cartActionCreater'
 import { useNavigate } from 'react-router-dom'
 import StarComp from './StarComp/StarComp'
+import { NavLink } from 'react-router-dom'
 const ProductComp = () => {
+    const [active, setActive] = useState("All")
+
     const navigate = useNavigate()
     const productsData = useSelector((productStore) => {
         return productStore
     })
-    console.log(productsData);
+    const [filteraCategory, setfilteraCategory] = useState(productsData.products)
+    console.log(filteraCategory)
+    console.log(productsData.products);
     const dispatch = useDispatch(productStore)
     useEffect(() => {
         axios.get("https://fakestoreapi.com/products").then((res) => {
             console.log(res.data);
+            setfilteraCategory(res.data)
             dispatch(
                 productActionCreater(res.data)
             )
@@ -24,6 +30,7 @@ const ProductComp = () => {
             alert("Data Not Found from API...")
         })
     }, [])
+
     const handleCart = (ele) => {
         console.log("hello", productsData.cart);
         // (productsData.cart.filter(id)=>id==ele.id)
@@ -35,12 +42,50 @@ const ProductComp = () => {
     const handleGoToCart = () => {
         navigate('/cart')
     }
+    const productCategory = (category) => {
+        if (category === "All") {
+            setfilteraCategory(productsData.products)
+            setActive(category)
+        } else {
+            setActive(category)
+
+            const categoryData = productsData.products.filter((ele) => {
+                return ele.category === category
+            })
+            setfilteraCategory(categoryData)
+        }
+    }
     return (
         <div className='productComp'>
-            <h1>Product Component</h1>
-            <p>Lorem, ipsum dolor sit amet elit. Recusandae repellat praesentium consequatur ut et maxime nulla placeat voluptates necessitatibus similique qui, dolorum ipsum enim! Repellendus veritatis a et modi, illum non itaque earum dolor fugiat autem, neque fugit odio doloremque, laborum explicabo repudiandae dicta accusamus facilis velit quo eos quibusdam maxime nostrum! Ab doloremque dolorem necessitatibus, expedita ut non dolore architecto fugiat, odit corrupti nobis quidem error repudiandae eius, ex vel corporis recusandae laudantium ratione tempore vero porro consectetur beatae animi? Eveniet officiis quis nihil numquam provident optio. Consequatur distinctio, rem quibusdam beatae odio explicabo! Tempora enim voluptas labore quia!</p>
+            <h1>Products</h1>
+            <hr />
+            <div className="productsCategorySection">
+
+                <button className={`allCategory ${active === "All" ? "buttonActive" : null}`}
+                    onClick={() => { productCategory("All") }}
+                >
+                    <p>All</p>
+                </button>
+
+                <button className={`mensCategory ${active === "men's clothing" ? "buttonActive" : null}`}
+                    onClick={() => { productCategory("men's clothing") }}>
+                    <p>Men's Category</p>
+                </button>
+                <button className={`womensCategory ${active === "women's clothing" ? "buttonActive" : null}`}
+                    onClick={() => { productCategory("women's clothing") }}>
+                    <p>Women's Category</p>
+                </button>
+                <button className={`jewelleryCategory ${active === "jewelery" ? "buttonActive" : null}`}
+                    onClick={() => { productCategory("jewelery") }}>
+                    <p>Jewellery's</p>
+                </button>
+                <button className={`electronicCategory ${active === "electronics" ? "buttonActive" : null}`}
+                    onClick={() => { productCategory("electronics") }}>
+                    <p>Electronics</p>
+                </button>
+            </div>
             <div className="productCardContainer">
-                {productsData.products && productsData.products.map((ele) => {
+                {filteraCategory && filteraCategory.map((ele) => {
                     return <>
                         <div className="productCard">
                             <div className="imgContainer">

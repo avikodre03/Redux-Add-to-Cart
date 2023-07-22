@@ -7,11 +7,46 @@
     overflow-y: scroll;
 }
 
-.productComp h1,
-.productComp p {
+.productComp h1 {
     margin-bottom: 1rem;
+    font-size: 2.2rem;
+    text-align: center;
+}
+.productsCategorySection{
+    width: 100%;
+    height: 10%;
+    /* border: 2px solid red; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0;
 }
 
+.productsCategorySection button{
+    border: 1px solid black;
+    padding: 10px 15px;
+    margin: 0 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    background-color: white;
+    outline: none;
+}
+.allCategory{
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+.electronicCategory{
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+.productsCategorySection button:hover{
+background-color: black;
+color: white;
+}
+.productsCategorySection .buttonActive {
+    background-color: black;
+    color: white;
+}
 .productCardContainer {
     width: 100%;
     display: flex;

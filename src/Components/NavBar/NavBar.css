@@ -48,6 +48,15 @@
     position: relative;
     padding: 0 7px;
     transition: .3s;
+    
+    display: flex;
+    align-items: center;
+}
+.link a svg{
+   
+    margin-top: 4px;
+    margin-right: 2px;
+    font-size: 1.4rem;
 }
 .link a:hover{
     color: white;

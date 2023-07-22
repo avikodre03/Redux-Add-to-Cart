@@ -5,6 +5,7 @@ import { Route, Routes } from 'react-router-dom';
 import HomeComp from './Components/HomeComp/HomeComp';
 import ProductComp from './Components/ProductComp/ProductComp';
 import CartComp from './Components/CartComp/CartComp';
+import Contact from './Components/Contact/Contact';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
     <Routes>
       <Route path='/' element={<HomeComp/>}/>
       <Route path='/product' element={<ProductComp/>}/>
+      <Route path='/contact' element={<Contact/>}/>
       <Route path='/cart' element={<CartComp/>}/>
     </Routes>
     </div>
