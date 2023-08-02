@@ -47,10 +47,11 @@ Shopify is an e-commerce website built using React.js. It utilizes React Router 
 5. Open your browser and visit http://localhost:3000 to access youtube-clone.
 
 ## Usage
-
-- Home: The default page displays a list of All trending videos and allows you to Filter for videos using the Scroll bar.
-- Video Details: Clicking on a video thumbnail will take you to the video details page, where you can watch the video, read the description, view video statistics, and browse related videos.
-- SideBar: When route watch page then on click in side bar button retun to home page
+- Create a user account and manage your profile information.
+- Browse through different product categories.
+- Add products to the shopping cart and manage the cart contents.
+- Access the admin panel using the provided credentials to manage products, inventory, and orders.
+- Proceed to the checkout process to place an order.
 
 ## Hosted Version
 
