@@ -1,0 +1,48 @@
+.registerPage{
+    height: 90%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.registerDiv{
+    width: 40%;
+    /* border: 2px solid black; */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.701);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+.registerDiv h2{
+    margin: 1rem 0;
+    text-align: center;
+}
+.registerDiv p{
+    margin: 5px 0;
+    font-size: 1rem;
+    font-weight: 500;
+}
+.registerDiv input{
+    padding:12px 10px;
+    font-size: 1rem;
+    border-radius: 10px;
+    /* outline: none; */
+    border: 1px solid grey;
+    margin-bottom: 10px;
+}
+.registerDiv button{
+    margin: 1rem 0;
+    padding: 10px 0;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    font-weight: 500;
+    font-size: 1rem;
+    background-color: rgba(0, 0, 0, 0.872);
+    color: white;
+    cursor: pointer;
+}
+.registerDiv button:hover{
+    background-color: rgba(19, 19, 19, 0.852);
+}

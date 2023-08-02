@@ -1,0 +1,86 @@
+.ProductDetails {
+    height: 90%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.imgLeftContainer {
+    height: 90%;
+    width: 40%;
+    /* border: 2px solid red; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.imgLeftContainer img {
+    height: 60%;
+    width: 60%;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.578);
+    padding: 1rem;
+}
+
+.ProductDetailsContainer {
+    height: 90%;
+    width: 60%;
+    /* border: 2px solid red; */
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 15px;
+    border-left: 1px solid grey;
+}
+
+.categorypara p {
+    margin: 10px 0;
+    font-size: 1.7rem;
+    color: grey;
+}
+
+.ProductDetailsContainer h2 {
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.description span {
+    font-size: 1.3rem;
+    margin: 10px 0;
+
+    color: rgb(216, 43, 43);
+}
+
+.descriptionPara p {
+    font-size: 1.1rem;
+    padding: 0 10px;
+}
+
+.ProductDetailsContainer h4 {
+    padding: 10px;
+    font-size: 1.6rem;
+}
+
+.buttons {
+    width: 100%;
+    display: flex;
+    padding: 0 10px;
+}
+
+.buttons button {
+    padding: 10px;
+    margin-right: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+    border: 1px solid black;
+    background-color: black;
+    color: white;
+}
+
+#goCart {
+    background-color: white;
+    color: black;
+    padding: 0 15px;
+}

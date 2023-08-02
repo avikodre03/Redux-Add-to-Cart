@@ -1,0 +1,9 @@
+import { USERID } from "../ActionTypes"
+
+const usernameActionCreater=(data)=>{
+    return {
+        type:USERID,
+        user:data
+    }
+}
+export default usernameActionCreater;

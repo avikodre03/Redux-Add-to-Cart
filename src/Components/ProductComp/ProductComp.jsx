@@ -5,9 +5,10 @@ import productActionCreater from '../Redux/ActionCreater/productActionCreater'
 import { useDispatch, useSelector } from 'react-redux'
 import productStore from '../Redux/Store'
 import cartActionCreater from '../Redux/ActionCreater/cartActionCreater'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import StarComp from './StarComp/StarComp'
 import { NavLink } from 'react-router-dom'
+
 const ProductComp = () => {
     const [active, setActive] = useState("All")
 
@@ -15,10 +16,13 @@ const ProductComp = () => {
     const productsData = useSelector((productStore) => {
         return productStore
     })
+
     const [filteraCategory, setfilteraCategory] = useState(productsData.products)
     console.log(filteraCategory)
     console.log(productsData.products);
+
     const dispatch = useDispatch(productStore)
+
     useEffect(() => {
         axios.get("https://fakestoreapi.com/products").then((res) => {
             console.log(res.data);
@@ -39,9 +43,9 @@ const ProductComp = () => {
             cartActionCreater(ele)
         )
     }
-    const handleGoToCart = () => {
-        navigate('/cart')
-    }
+    // const handleGoToCart = () => {
+    //     navigate('/productDetails')
+    // }
     const productCategory = (category) => {
         if (category === "All") {
             setfilteraCategory(productsData.products)
@@ -101,7 +105,10 @@ const ProductComp = () => {
                                     <button onClick={() => {
                                         handleCart(ele)
                                     }}>Add to Cart</button>
-                                    <button id='cart' onClick={handleGoToCart}>Go to Cart</button>
+                                    <Link to={`/product/${ele.id}`}>
+                                    
+                                    <button id='cart'>More Details</button>
+                                    </Link>
                                 </div>
                             </div>
                         </div>

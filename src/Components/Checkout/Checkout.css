@@ -1,0 +1,121 @@
+.CheckoutPage{
+    height: 90%;
+    width: 100%;
+    overflow-y: scroll;
+    
+}
+.Billing{
+    /* border: 2px solid red; */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.546);
+    padding: 0 1rem;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    /* margin: auto; */
+    margin: 2rem auto;
+}
+.Billing h2 {
+    margin: 1rem 0;
+}
+.Billing p {
+    margin: 5px 0;
+}
+.Billing p span{
+    color: gray;
+}
+.Billing input {
+    padding: 10px 5px;
+    border-radius: 5px;
+    border: 1px solid grey;
+}
+.Billing .fullname {
+   display: flex;
+   justify-content: space-between;
+   margin: 10px 0;
+}
+.Billing .fullname .firstname,
+.Billing .fullname .lastname {
+   width: 50%;
+}
+.Billing .fullname .firstname,
+.Billing .fullname .lastname {
+   width: 48%;
+   
+}
+.Billing .fullname .firstname p,
+.Billing .fullname .lastname p{
+   margin: 5px 0;
+}
+.Billing .fullname .firstname input,
+.Billing .fullname .lastname input{
+   width: 100%;
+   padding: 8px 5px ;
+   
+}
+.Billing .cityAddress {
+    width: 100%;
+    margin-bottom: 20px ;
+    display: flex;
+    justify-content: space-between;
+   
+}
+.Billing .cityAddress .country{
+    width: 30%;
+}
+.Billing .cityAddress .country select{
+    width: 100%;
+    padding: 7px 5px;
+    font-size: 1rem;
+    border-radius: 5px;
+    color: rgb(38, 38, 38);
+}
+.Billing .cityAddress .state{
+    width: 30%;
+}
+.Billing .cityAddress .zip{
+    width: 30%;
+}
+.Billing .cityAddress input{
+    width: 100%;
+}
+/* .Billing .payment{
+    display: flex ;
+    flex-direction: column;
+} */
+
+.Billing .payment h3{
+    margin: 15px 0;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+.Billing .payment small{
+    color: gray;
+}
+.Billing .payment label{
+   margin-left: 5px;
+}
+.expiry{
+    display: flex;
+    margin-bottom: 20px;
+}
+.expiry .Expiration{
+    margin-right: 1rem;
+}
+.Billing .buttons{
+    padding: 1rem ;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+}
+.Billing .buttons button{
+    padding: 12px 1rem ;
+    font-size: 1.1rem;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 10px;
+    margin: 0 1rem;
+    background-color: black;
+    color: white;
+}

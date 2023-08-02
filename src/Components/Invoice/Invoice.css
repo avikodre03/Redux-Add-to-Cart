@@ -1,0 +1,32 @@
+/* CSS for the table and its elements */
+.invoiceContainer{
+  width: 80%;
+  height: 100%;
+  padding: 2rem;
+}
+.invoiceContainer .dateAndTime{
+  margin: 1rem 0;
+}
+.invoiceContainer .shippingAddress{
+  margin: 1rem 0;
+}
+.custom-table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  .custom-table th,
+  .custom-table td {
+    border: 1px solid #dddddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .custom-table th {
+    background-color: #f2f2f2;
+  }
+  
+  .custom-table tfoot td {
+    font-weight: bold;
+  }
+  

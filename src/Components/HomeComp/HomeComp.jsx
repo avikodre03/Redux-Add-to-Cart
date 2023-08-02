@@ -8,9 +8,9 @@ const HomeComp = () => {
             <source src={video}/>
         </video>
         <div className="homeCompOverlay">
-            <h1>Geeks Shopping cart</h1>
+            <h1>Shopify Shopping cart</h1>
             <p>Lorem ipsum dolor sit amet. Necessitatibus reprehenderit aspernatur vitae aliquid dicta asperiores debitis cupiditate obcaecati laudantium magnam.</p>
-             consectetur adipisicing elit. Necessitatibus reprehenderit aspernatur vitae aliquid dicta asperiores debitis cupiditate obcaecati laudantium magnam
+             consectetur adipisicing elit.vitae aliquid dicta asperiores debitis cupiditate obcaecati laudantium magnam
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus reprehenderit asperiores debitis cupiditate obcaecati laudantium magnam.
              consectetur adipisicing elit. Necessitatibus reprehenderit aspernatur vitae aliquid dicta asperiores debitis cupiditate obcaecati laudantium magnam
        <button>Explore More..!!</button>

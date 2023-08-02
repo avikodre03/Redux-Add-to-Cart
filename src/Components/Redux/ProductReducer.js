@@ -1,6 +1,11 @@
 const intialProductData = {
     products: [],
-    cart: []
+    cart: [],
+    initialFormData: [],
+    initialRegisterData: [],
+    isLogin: false,
+    
+    profilename:""
 }
 
 const productReducer = (state = intialProductData, action) => {
@@ -35,29 +40,56 @@ const productReducer = (state = intialProductData, action) => {
                     cart: [...state.cart, { ...action.payload, quantity: 1 }],
                 };
             }
-        // state={
-        //     ...state,
-        //     cart:[...state.cart, action.payload]
-        // }
-        break;
+            // state={
+            //     ...state,
+            //     cart:[...state.cart, action.payload]
+            // }
+            break;
         case "removeCart":
-           state = {
-           
-            ...state,
-            cart: state.cart.filter((ele) => ele.id !== action.removeCart)
-           }
+            state = {
+
+                ...state,
+                cart: state.cart.filter((ele) => ele.id !== action.removeCart)
+            }
             break;
 
-            case "ChangeQuentity":
-                const { id, updateQuentity } = action.quentity;
-                const updatedCart = state.cart.map((ele) =>
-                    ele.id === id ? { ...ele, quantity: updateQuentity } : ele
-                );
-                return {
-                    ...state,
-                    cart: updatedCart,
-                };
-    break;
+        case "ChangeQuentity":
+            const { id, updateQuentity } = action.quentity;
+            const updatedCart = state.cart.map((ele) =>
+                ele.id === id ? { ...ele, quantity: updateQuentity } : ele
+            );
+            return {
+                ...state,
+                cart: updatedCart,
+            };
+            break;
+        case "checkout":
+            state = {
+                ...state,
+                initialFormData: action.address
+                // initialFormData: action.address
+            }
+            break;
+        case "login":
+            state = {
+                ...state,
+                isLogin: action.loginData
+
+            }
+            break;
+        case "register":
+            state = {
+                ...state,
+                // initialRegisterData: action.registerData 
+                initialRegisterData: [...state.initialRegisterData, { ...action.registerData }]
+
+            }
+            break;
+        case "profile":
+            state={
+                ...state,
+                profilename:action.profileData
+            }
     }
     console.log("state", state)
     return state

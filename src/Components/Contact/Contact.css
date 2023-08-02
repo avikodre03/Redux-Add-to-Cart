@@ -1,0 +1,86 @@
+.Contact {
+    height: 90%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.ContactHeading {
+    /* border: 2px solid red; */
+    height: 20%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.ContactHeading h1 {
+    font-size: 2.1rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.ContactHeading hr {
+    width: 80%;
+    text-align: center;
+}
+
+.bottomDiv {
+    /* border: 2px solid red; */
+    height: 80%;
+    width: 100%;
+    display: flex;
+}
+
+.bottomLeft {
+    /* border: 2px solid red; */
+    height: 100%;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bottomLeft img {
+    height: 90%;
+    width: 70%;
+}
+
+.bottomRight {
+    /* border: 2px solid red; */
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.bottomRight p {
+    margin: 5px 0;
+    margin-top: 10px;
+}
+
+.bottomRight input {
+    width: 80%;
+    padding: 10px;
+
+}
+
+.bottomRight textarea {
+    width: 80%;
+}
+
+.bottomRight button {
+    width: 20%;
+    padding: 5px;
+    font-size: 1.1rem;
+    margin: 20px 0;
+    background-color: rgb(83, 22, 22);
+    outline: none;
+    border: 1px solid black;
+    color: white;
+    border-radius: 5px;
+}

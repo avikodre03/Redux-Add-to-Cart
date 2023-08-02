@@ -1,18 +1,74 @@
-.CartComp {
-    height: 80%;
+.CartCompContainer {
+    height: 90%;
+    width: 100%;
+    /* border: 2px solid yellow; */
+    /* margin-top: 10px;
+    padding: 10px; */
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    /* align-items: center;
+    overflow-y: scroll; */
+
+}
+
+.CartCompContainerTop {
+    height: 95%;
+    width: 100%;
+    display: flex;
+
+}
+
+.cartCompContainerLeft {
+    height: 100%;
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    /* overflow-y: scroll; */
+
+}
+
+.cartCompContainerLeftTop {
+    height: 10%;
     width: 100%;
     /* border: 2px solid red; */
-    margin-top: 10px;
-    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.cartCompContainerLeft hr {
+    width: 95%;
+    margin: auto;
+}
+
+.cartCompContainerLeft .CartComp {
+    height: 90%;
+    width: 100%;
+    /* border: 2px solid red; */
+    /* margin-top: 10px;
+    padding: 10px; */
     display: flex;
     flex-direction: column;
     /* justify-content: center; */
     align-items: center;
+    padding: 1rem 2rem;
     overflow-y: scroll;
 
 }
 
+::-webkit-scrollbar {
+    width: 0;
+}
+
+::-webkit-scrollbar-CartComp {
+    background: transparent;
+}
+
 .CartComp .emptyCart {
+    height: 100%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -20,8 +76,8 @@
 }
 
 .emptyCart img {
-    height: 300px;
-    width: 400px;
+    height: 250px;
+    width: 350px;
 
 }
 
@@ -58,11 +114,12 @@
 }
 
 .cartCard {
-    width: 80%;
-    height: 250px;
-    box-shadow: 0 0 10px black;
+    width: 100%;
+    height: 190px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.454);
     display: flex;
-    margin: 1rem 0;
+    margin: .5rem 0;
+
 }
 
 .cartCardImgContainer {
@@ -76,9 +133,9 @@
 }
 
 .cartCardImgContainer img {
-    height: 80%;
+    height: 70%;
     /* background-color: aqua; */
-    width: 80%;
+    width: 70%;
     background: transparent;
 }
 
@@ -88,11 +145,13 @@
     display: flex;
     flex-direction: column;
     /* border: 2px solid red; */
-    padding: 10px;
+    padding: 5px;
 }
 
 .cartCardDescription h2 {
-    margin-bottom: 1rem;
+    margin-bottom: .5rem;
+
+    font-size: 1.2rem;
 }
 
 .cartCardDescription span {
@@ -100,6 +159,17 @@
     color: red;
     font-weight: bold;
     font-size: 1.2rem;
+}
+
+.totalPrice {
+    margin: 5px 0;
+
+}
+
+.totalPrice p {
+    font-size: 1.2rem;
+    font-weight: 600;
+
 }
 
 .quantity {
@@ -111,6 +181,7 @@
 .quantity p {
     font-weight: bold;
     font-size: 1.1rem;
+
     /* margin-right: 10px; */
 }
 
@@ -118,10 +189,15 @@
     font-weight: bold;
     font-size: 1.2rem;
     height: 30px;
-    width: 50px;
+    width: 30px;
     margin: 0 10px;
+    border-radius: 50%;
     cursor: pointer;
+    background-color: white;
+    outline: none;
+    border: 1px solid black;
 }
+
 
 .cartCardPrice {
     /* border: 2px solid red; */
@@ -134,7 +210,7 @@
 }
 
 .cartCardPrice p {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: bold;
 }
 
@@ -153,7 +229,7 @@
     box-shadow: 0 0 7px rgba(0, 0, 0, 0.281);
     transition-duration: .3s;
     transition-property: box-shadow, transform;
-    margin-bottom: 1rem;
+    margin-bottom: .3rem;
 
 }
 
@@ -163,4 +239,112 @@
     box-shadow: 0 0 15px rgba(47, 47, 47, 0.963);
 
     transform: scale(1.05);
+}
+
+.cartCompContainerRight {
+    height: 100%;
+    width: 25%;
+    padding: 0 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.162);
+}
+
+.cartCompContainerRightTop {
+    height: 10%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.cartCompContainerRightBottom {
+    width: 100%;
+   
+    /* display: flex;
+    justify-content: space-between;
+    margin: 5px 0; */
+}
+
+.cartCompContainerRightBottom .iteams {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin: 1.1rem 0;
+}
+
+.cartCompContainerRightBottom .shipping {
+    width: 100%;
+    margin: 15px 0;
+}
+
+.cartCompContainerRightBottom .shipping p {
+
+    margin: 10px 10px;
+}
+
+.cartCompContainerRightBottom .promoCode {
+    width: 100%;
+    margin:1rem 0;
+}
+
+.cartCompContainerRightBottom .promoCode input {
+    margin: 10px 0;
+    padding: 5px;
+}
+
+.cartCompContainerRightBottom .promoCode button {
+    margin: 10px 10px;
+    padding: 5px 10px;
+    color: white;
+    background-color: red;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+.cartCompContainerRightBottom .totalCost {
+    width: 100%;
+    margin: 15px 0;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+.cartCompContainerRightBottom .CheckOut {
+    width: 100%;
+}
+
+.cartCompContainerRightBottom .CheckOut button {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 1.1rem;
+    color: white;
+    font-weight: 500;
+    background-color: rgb(160, 87, 228);
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.ContinueShopping {
+    height: 5%;
+    padding-left: 2rem;
+    display: flex;
+    align-items: center;
+}
+
+.ContinueShopping button {
+    background: transparent;
+    color: blue;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.ContinueShopping button svg {
+    margin-bottom: 2px;
+    margin-right: 5px;
+    font-size: 1.1rem;
 }
