@@ -37,19 +37,14 @@ Shopify is an e-commerce website built using React.js. It utilizes React Router 
    ```bash
    npm install
    ```
-4. Create a .env file in the root of the project and provide the necessary environment variables:
-<p align="left">
-<img src="https://github.com/avikodre03/MCT-YouTube-Clone/assets/116943966/0231f07b-6efe-4240-b697-ba3583d3215a" width="400" height="100" />
-</p>
-  You can obtain your RapidAPI host and key by signing up for an account at RapidAPI.
   
-5. In a separate terminal, start the development server:
+4. In a separate terminal, start the development server:
 
    ```bash
    npm start
    ```
 
-6. Open your browser and visit http://localhost:3000 to access youtube-clone.
+5. Open your browser and visit http://localhost:3000 to access youtube-clone.
 
 ## Usage
 
