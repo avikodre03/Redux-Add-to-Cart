@@ -59,7 +59,7 @@ A hosted version of this project can be found [here](https://redux-add-to-cart-m
 
 ## Video Explaination
 
-Overview of This project can be found [here](https://drive.google.com/file/d/10Ji1AVMRhUzPECi7NLKScpcOtw3iTI-Y/view?usp=drive_link)
+Overview of This project can be found [here](https://drive.google.com/file/d/11NZBZ-vKOaNGaSa5FNEwCHhNw2hFd7J7/view?usp=drive_link)
 
 ## Contributing
 
