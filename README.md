@@ -23,7 +23,7 @@ Shopify is an e-commerce website built using React.js. It utilizes React Router 
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/MCT-YouTube-Clone.git
+   git clone https://github.com/your-username/Redux-Add-to-Cart.git
    ```
 
 2. Navigate to the project directory:
@@ -44,7 +44,7 @@ Shopify is an e-commerce website built using React.js. It utilizes React Router 
    npm start
    ```
 
-5. Open your browser and visit http://localhost:3000 to access youtube-clone.
+5. Open your browser and visit http://localhost:3000 to access Shopify.
 
 ## Usage
 - Create a user account and manage your profile information.
@@ -81,4 +81,4 @@ If you have any questions or inquiries, please feel free to contact the project 
 - Name: Avinash Kodre.
 - Email: akodre111@gmail.com
 
-Thank you for using YouTube Clone! We hope you enjoy your Better Video experience.
+Thank you for using Shopify APP! We hope you enjoy your Better Shopping experience.
