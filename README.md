@@ -29,7 +29,7 @@ Shopify is an e-commerce website built using React.js. It utilizes React Router 
 2. Navigate to the project directory:
 
    ```bash
-   cd youtube-clone
+   cd Shopify
    ```
 
 3. Install the dependencies:
