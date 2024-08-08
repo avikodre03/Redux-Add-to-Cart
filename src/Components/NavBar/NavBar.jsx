@@ -1,11 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './NavBar.css'
 import { Link, NavLink, useNavigate } from 'react-router-dom'
 import image from '../Assets/Images/logo.png'
-import { FaShoppingCart } from 'react-icons/fa';
+import { AiOutlineMenu } from 'react-icons/ai';
 import { useDispatch, useSelector } from 'react-redux';
 import loginActonCreater from '../Redux/ActionCreater/loginActionCreater';
+import Web from './WebBar/Web';
+import Mobile from './MobileBar/Mobile';
 const NavBar = () => {
+  const [isOpen, setIsOpen] = useState(false)
+
   const cartData = useSelector((productStore) => {
     return productStore
   })
@@ -14,7 +18,7 @@ const NavBar = () => {
   const handleLogout = (e) => {
     dispatch(loginActonCreater(false))
     navigate('/login')
-    console.log(e.target.value);
+    // console.log(e.target.value);
   }
   return (
     <div className='NavBar'>
@@ -24,38 +28,15 @@ const NavBar = () => {
         <h1>Shopify</h1>
 
       </div>
-      <div className="link">
-        <NavLink to='/' activeClassName="active">Home</NavLink>
-        <NavLink to='/product' activeClassName="active">Product</NavLink>
-        <NavLink to='/contact' activeClassName="active">Contact</NavLink>
-        
-        
+      
 
+      <Web cartData={cartData} handleLogout={handleLogout}/>
+      <div className="mobile-menu" onClick={() => setIsOpen(!isOpen)}>
+     
+            <AiOutlineMenu className='menu-icon' />
+         
       </div>
-      <div className="cartAndlogin">
-      <NavLink to={`${cartData.isLogin ? '/cart' : "/login"}`} id='cart' activeClassName="active"><FaShoppingCart />{cartData.cart.length > 0 ? cartData.cart.length : null}</NavLink>
-
-
-      {cartData.isLogin
-          ?
-          (<select onChange={(e) => handleLogout(e)}>
-            <option value="heloo" disabled selected hidden >{cartData.profilename}</option>
-            <option value="Logout" >Logout</option>
-
-          </select>)
-          :
-          (<>
-            <Link to="/login">
-              <button>Login</button>
-            </Link>
-            <Link to="/register">
-              <button>Register</button>
-            </Link>
-          </>)
-        }
-
-
-      </div>
+      {isOpen && <Mobile  cartData={cartData} handleLogout={handleLogout}/>}
     </div>
   )
 }

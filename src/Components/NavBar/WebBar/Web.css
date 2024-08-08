@@ -1,0 +1,15 @@
+.web-comp{
+    display: flex;
+    /* border: 2px solid red; */
+    justify-content: space-between;
+    height: 100%;
+    width: 80%;
+}
+@media only screen and (max-width: 720px){
+    .web-comp{
+        display: none;
+    }
+    .Mobile-comp{
+        display: flex;
+    }
+}

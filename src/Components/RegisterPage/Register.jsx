@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import registerActionCreater from '../Redux/ActionCreater/registerActionCreater'
 import { useNavigate } from 'react-router-dom'
+
 import "./Register.css"
 const Register = () => {
     const initialLoginData = {
@@ -48,6 +49,7 @@ const Register = () => {
               }else{
                 setloginData(initialLoginData)
                 dispatch(registerActionCreater(loginData))
+                // localStorage.setItem("register-data", JSON.stringify(loginData))
                 navigate("/login")
                   
               }

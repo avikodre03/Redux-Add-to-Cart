@@ -7,10 +7,13 @@ import emptyimg from "../Assets/Images/images.png"
 import removeCartActionCreater from '../Redux/ActionCreater/removeCartActionCreater'
 import quantityActionCreater from '../Redux/ActionCreater/quantityActionCreater'
 import { HiArrowNarrowLeft } from 'react-icons/hi';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const CartComp = () => {
 
   let [totalprice, setTotalprice] = useState(0)
+  let [disable, setdisable] = useState(true)
 
   const cartData = useSelector((productStore) => {
     return productStore.cart
@@ -21,14 +24,30 @@ const CartComp = () => {
 
   const handleRemovecart = (id) => {
     dispatch(removeCartActionCreater(id))
+    toast.error('Item deleted from cart!!', {
+      position: "top-right",
+      autoClose: 800,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+    });
   }
 
   const handleQuentity = (id, updateQuentity) => {
     if (updateQuentity >= 1) {
-
       dispatch(quantityActionCreater(id, updateQuentity))
-    }
 
+    }
+    if (updateQuentity > 1) {
+      setdisable(false)
+    } else {
+
+      setdisable(true)
+
+    }
   }
 
   const TotalpriceHandle = () => {
@@ -44,7 +63,7 @@ const CartComp = () => {
       })
       console.log(totalPrice)
       setTotalprice(totalPrice.toFixed(2))
-     
+
     } else {
       setTotalprice(0)
     }
@@ -88,11 +107,13 @@ const CartComp = () => {
 
                         <p>{ele && ele.quantity} X ${ele && ele.price} = ${ele && ele.quantity * ele.price}</p>
                       </div>
-                      <div className="quantity"><p>QTY : </p>
+                      <div className="quantity"><p style={{ marginRight: "10px" }}>QTY : </p>
                         <button
                           onClick={() => { handleQuentity(ele.id, ele.quantity - 1) }}
+                          disabled={disable}
+                          className={` ${disable ? "dispalybtn" : null}`}
                         >-</button>
-                        <p>{ele && ele.quantity}</p>
+                        <p style={{ fontSize: "20px" }}>{ele && ele.quantity}</p>
                         <button
                           onClick={() => { handleQuentity(ele.id, ele.quantity + 1) }}
                         >+</button></div>
@@ -134,12 +155,12 @@ const CartComp = () => {
               </div>
               <div className="CheckOut">
                 {cartData.length == 0 ?
-                (<button onClick={()=>{alert("cart is empty")}}
-                >CHECKOUT</button>)
-              :(<Link to="/checkout">
-              <button>CHECKOUT</button>
-              </Link>)}
-                
+                  (<button onClick={() => { alert("cart is empty") }}
+                  >CHECKOUT</button>)
+                  : (<Link to="/checkout">
+                    <button>CHECKOUT</button>
+                  </Link>)}
+
               </div>
             </div>
           </div>
@@ -149,6 +170,19 @@ const CartComp = () => {
             navigate("/product")
           }}><HiArrowNarrowLeft />Continue Shopping</button>
         </div>
+
+        <ToastContainer
+          position="top-right"
+          autoClose={1000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="dark"
+        />
       </div>
     </>
 

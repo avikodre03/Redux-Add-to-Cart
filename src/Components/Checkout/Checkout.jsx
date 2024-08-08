@@ -5,6 +5,7 @@ import './Checkout.css'
 
 import productStore from '../Redux/Store'
 import checkoutActionCreater from '../Redux/ActionCreater/chckoutActionCreater'
+import clearCartActionCreater from '../Redux/ActionCreater/clearCartActionCreater'
 
 const Checkout = () => {
   const initialFormData = {
@@ -18,13 +19,27 @@ const Checkout = () => {
   const dispatch = useDispatch(productStore)
 
   const [formDetails, setformDetails] = useState(initialFormData)
+  const [invoiceBtn, setinvoiceBtn] = useState(true)
   // console.log(formDetails);
   const handleSubmit = (event) => {
     // event.preventDefault();
+    if(formDetails.firstname==="" ||
+          formDetails.lastname==="" ||
+          formDetails.address==="" ||
+          formDetails.Country===""||
+          formDetails.State===""||
+          formDetails.Zip===""
+           ){
+           
+            alert("Please Enter All details")
+        }else{
     dispatch(checkoutActionCreater(formDetails))
     console.log('Form Data:', formDetails);
     setformDetails(initialFormData)
     alert("Order done Succefully..")
+    setinvoiceBtn(false)
+    dispatch(clearCartActionCreater())
+        }
   };
 
   const handleChange = (event) => {
@@ -113,9 +128,9 @@ const Checkout = () => {
         <hr />
         <div className="buttons">
 
-          <button onClick={handleSubmit}>Order Now</button>
+          <button  className={`${invoiceBtn?null:"dispalyInvoice"}`} onClick={handleSubmit}>Order Now</button>
           <Link to="/invoice">
-            <button>Doanload invoice</button>
+            <button className={`${invoiceBtn?"dispalyInvoice":null}`}>Download invoice</button>
           </Link>
         </div>
       </div>

@@ -90,6 +90,13 @@ const productReducer = (state = intialProductData, action) => {
                 ...state,
                 profilename:action.profileData
             }
+            break;
+        case "clear":
+            state={
+                ...state,
+                cart:state.cart.splice(0, state.cart.length)
+            }
+            console.log(state.cart);
     }
     console.log("state", state)
     return state

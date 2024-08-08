@@ -7,6 +7,10 @@ import productStore from '../Redux/Store'
 import cartActionCreater from '../Redux/ActionCreater/cartActionCreater'
 import { Link, useNavigate } from 'react-router-dom'
 import StarComp from './StarComp/StarComp'
+
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
+
 import { NavLink } from 'react-router-dom'
 
 const ProductComp = () => {
@@ -16,16 +20,16 @@ const ProductComp = () => {
     const productsData = useSelector((productStore) => {
         return productStore
     })
-
     const [filteraCategory, setfilteraCategory] = useState(productsData.products)
-    console.log(filteraCategory)
-    console.log(productsData.products);
+
+    // console.log(filteraCategory)
+    console.log(productsData);
 
     const dispatch = useDispatch(productStore)
 
     useEffect(() => {
         axios.get("https://fakestoreapi.com/products").then((res) => {
-            console.log(res.data);
+          
             setfilteraCategory(res.data)
             dispatch(
                 productActionCreater(res.data)
@@ -42,6 +46,16 @@ const ProductComp = () => {
 
             cartActionCreater(ele)
         )
+        toast.success("Item added to cart!", {
+            position: toast.POSITION.TOP_RIGHT,
+            autoClose: 1000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "dark",
+          });
     }
     // const handleGoToCart = () => {
     //     navigate('/productDetails')
@@ -115,6 +129,18 @@ const ProductComp = () => {
                     </>
                 })}
             </div>
+            <ToastContainer
+        position="top-right"
+        autoClose={1000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+      />
         </div>
     )
 }
