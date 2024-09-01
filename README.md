@@ -1,6 +1,6 @@
-# Shopify
+# E-commerce website
 
-Shopify is an e-commerce website built using React.js. It utilizes React Router DOM for routing, the Axios library for handling API requests, and the Redux library for managing application state.It provides a platform for users to browse and purchase a wide range of products online.
+This is a E-commerce website built using React.js. It utilizes React Router DOM for routing, the Axios library for handling API requests, and the Redux library for managing application state.It provides a platform for users to browse and purchase a wide range of products online.
 
 ## Features
 
@@ -81,4 +81,4 @@ If you have any questions or inquiries, please feel free to contact the project 
 - Name: Avinash Kodre.
 - Email: akodre111@gmail.com
 
-Thank you for using Shopify APP! We hope you enjoy your Better Shopping experience.
+Thank you for using E-commerce website APP! We hope you enjoy your Better Shopping experience.
